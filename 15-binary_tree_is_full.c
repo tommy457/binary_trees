@@ -29,10 +29,10 @@ int binary_tree_is_full_rec(const binary_tree_t *tree)
 	{
 		if ((tree->left != NULL && tree->right == NULL) ||
 				(tree->left == NULL && tree->right != NULL) ||
-				binary_tree_is_full(tree->left) ||
-				binary_tree_is_full(tree->right)
+				binary_tree_is_full_rec(tree->left) ||
+				binary_tree_is_full_rec(tree->right)
 		   )
-			return (1);
+			return (0);
 	}
-	return (0);
+	return (1);
 }
