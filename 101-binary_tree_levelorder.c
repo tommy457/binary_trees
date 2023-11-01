@@ -13,13 +13,16 @@ void levelorder_recurive(
 
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-	size_t height, level;
-
-	height = binary_tree_height(tree) + 1;
-
-	for (level = 1; level <= height; level++)
+	if (tree && func)
 	{
-		levelorder_recurive(tree, level, func);
+		size_t height, level;
+
+		height = binary_tree_height(tree) + 1;
+
+		for (level = 1; level <= height; level++)
+		{
+			levelorder_recurive(tree, level, func);
+		}
 	}
 }
 
